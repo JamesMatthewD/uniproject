@@ -17,6 +17,26 @@ npm run dev
 
 Then open http://localhost:3000.
 
+## Why Your Deploy Failed
+
+If your host says it cannot detect a static files directory, it is trying to deploy this project as a static site.
+
+This project is a Next.js server app with API routes (`app/api/*`), so it must be deployed as a Node web service (or on Vercel), not as static hosting.
+
+## Deploy (Render)
+
+This repo now includes `render.yaml` so Render can detect the correct service type.
+
+If creating manually on Render, use:
+
+- Service type: Web Service (not Static Site)
+- Build command: `npm install && npm run build`
+- Start command: `npm run start`
+
+## Deploy (Vercel)
+
+Vercel automatically detects Next.js and supports API routes out of the box.
+
 ## API Endpoints
 
 ### Health Check
